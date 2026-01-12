@@ -1,49 +1,67 @@
 # LucidWriting
 
-A macOS menu bar app that uses Claude AI to refine your messages before you send them.
+LucidWriting is a small macOS menu bar app that helps you polish messages before you send them. It takes a quick screenshot of your current chat window, asks Claude AI to rewrite your draft, and gives you a cleaner version you can edit and copy.
 
-## Features
+## What it does (in plain language)
 
-- **Global Hotkey (Cmd+Shift+L)**: Capture any messaging window and refine your draft
-- **AI-Powered Refinement**: Uses Claude to analyze context and improve your message
-- **Editable Results**: Edit the refined message before copying
-- **Re-refine with Instructions**: Give Claude specific instructions like "make it shorter" or "more formal"
-- **Screenshot History**: View past captures in the settings window
-- **User Context**: Customize with your role and communication preferences
+- **Makes your message clearer**: Rewrite a draft so it sounds more natural and professional.
+- **Works in any app**: Use it with iMessage, Slack, Signal, email in a browser, and more.
+- **You stay in control**: Edit the AI’s suggestion before you copy it.
+- **Ask for a different tone**: Add instructions like “shorter,” “more polite,” or “more direct.”
 
-## Setup
+## Screenshots
 
-1. Build and run the app in Xcode
-2. Click the menu bar icon to open settings
-3. Enter your Claude API key
-4. Grant Screen Recording permission when prompted
+![Menu bar icon and settings screen](docs/screenshots/menu-settings.png)
+![Refinement window showing a message to Sam Smith](docs/screenshots/refinement-sam-smith.png)
+
+## How it works (simple version)
+
+1. You write a message in any app.
+2. Press **Cmd + Shift + L**.
+3. The app reads the on-screen context and asks Claude to refine your text.
+4. You review, edit, and copy the result.
+
+## Getting started
+
+1. Open the project in Xcode and run it.
+2. Click the LucidWriting icon in the menu bar.
+3. Paste in your Claude API key.
+4. When macOS asks for **Screen Recording** permission, allow it (needed to read on-screen text).
 
 ## Usage
 
-1. Open any messaging app (iMessage, Slack, Signal, Chrome, etc.)
-2. Start typing your message
-3. Press **Cmd+Shift+L**
-4. Review the refined message, edit if needed
-5. Optionally add instructions and re-refine
-6. Click "Copy to Clipboard"
-7. Paste into your message
+1. Open any chat or email app.
+2. Type your draft message.
+3. Press **Cmd + Shift + L**.
+4. Review the refined message.
+5. Optionally add instructions and refine again.
+6. Click **Copy to Clipboard** and paste it where you need it.
 
-## User Context
+## Optional: Add your personal writing context
 
-Create a file at `~/LucidWriting/UserContext.txt` with your context:
+You can give the app more background about how you write by creating this file:
 
 ```
-Role: Your title/role
+~/LucidWriting/UserContext.txt
+```
+
+Example:
+
+```
+Role: Product manager
 Communication contexts:
-- Who you communicate with
+- Customers
+- Internal team
 Tone preferences:
-- Your preferred tone
+- Clear
+- Friendly
+- Direct
 ```
 
 ## Requirements
 
-- macOS 13.0+
-- Claude API key from Anthropic
+- macOS 13.0 or later
+- A Claude API key from Anthropic
 - Screen Recording permission
 
 ## License
